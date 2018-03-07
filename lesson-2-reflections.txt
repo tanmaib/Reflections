@@ -1,0 +1,35 @@
+1. What happens when you initialize a repository? Why do you need to do it?
+
+  It creats a file called .git in the working directory. so that the different versions of your file can be saved in it.
+
+2. How is the staging area different from the working directory and the repository?What value do you think it offers?
+
+  Staging area is a temporary space between the working directory and the repository. It enbales to bundle files together before commiting.
+	This allows us to choose files that we need to commit together to denote a logical change.
+
+3.How can you use the staging area to make sure you have one commit per logical change?
+
+  use git diff to compare working directory with the staging area.
+	use git diff --staged to compare staged area to the lastest commit in the repository.
+
+
+4. What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+  When you want to add a new feature that you dont want to publish, making changes not part of the main goal.
+
+5. How do the diagrams help you visualize the branch structure?
+
+  When we branch, we create a separate path to the existing master branch. The commits made on this branch is not reachable by other branches. This is because the commits are stored as a tree-structure, with the previous commit being the parent.To create a new branch and to checkout, we can use the command, git checkout -b new_branch_name.
+
+6. What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+  git merges the lines in a way by comparing both the branches prior to their branching. If a line was present in the original but not in either of the braches, it removes it. It adds any line added by either branch which was not present before branching.
+
+7. What are the pros and cons of Git's automatic merging vs. always doing merges manually?
+
+  Automatic: 
+  Super easy to merge when its simple and no conflict.
+  hard to decide when to create a commit.
+
+  Manual: it is hard and time consuming.
+
